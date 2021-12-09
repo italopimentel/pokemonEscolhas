@@ -52,7 +52,7 @@ public class Jogo {
 
 	@Override
 	public String toString() {
-		return "Jogo [jogador=" + jogador + ", capituloAtual=" + capituloAtual + "]";
+		return "\nBem vindo " + jogador.getNome() + " ao inicio do jogo" + ", parabéns por ter escolhido o seu " + jogador.getPokemonNome() + "\n";
 	}
 	
 

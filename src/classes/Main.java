@@ -35,22 +35,22 @@ public class Main {
 		System.out.println(resultado);*/
 		
 		
-		Scanner consoleInput= new Scanner(System.in);
+		Scanner consoleInput = new Scanner(System.in);
 		PokemonSimples[] listaPokemon= new PokemonSimples[] 
 		{
-				new PokemonSimples("Charmanter", "Fogo"),
-				new PokemonSimples("Bulbasaur", "Planta"),
+				new PokemonSimples("Charmander", "Fogo"),
+				new PokemonSimples("Bulbassauro", "Planta"),
 				new PokemonSimples("Squirtle", "Água")
 				
 		};		
 		
 		//Criação do Capitulo raiz Primeira altura
-		Capitulo raiz = new Capitulo("Você está iniciando hoje sua jornada pokemon, parabéns por ter escolhido charmander. O mundo lá fora está cheio de aventuras e perigos, cuidado onde pisa e boa jornada!!\r\n Pra qual caminho você deseja percorrer? 1 - floresta de veridian 2 - pegar atalho para cidade de cerulean", "home", 0);
+		Capitulo raiz = new Capitulo("Você está iniciando hoje sua jornada pokemon, O mundo lá fora está cheio de aventuras e perigos, cuidado onde pisa e boa jornada!!\r\n Pra qual caminho você deseja percorrer? 1 - floresta de veridian 2 - pegar atalho para cidade de cerulean", "home", 0);
 		//Criação do capitulos filhos da raiz .
-		Capitulo capitulo1 = new Capitulo("Você chegou com seu charmander na floresta de viridian e tentou capturar seu primeiro pokemon, ele era um Bedrill, e você o derrotou, mas ele fugiu e chamou os amigos. Corra!!\r\n Charmander está sendo atacado por diversos Bedrill's. (Você Perdeu 20 pontos).\r\n O que você deseja fazer?\r\n"
+		Capitulo capitulo1 = new Capitulo("Você chegou com seu pokemon na floresta de viridian e tentou capturar seu primeiro pokemon, ele era um Bedrill, e você o derrotou, mas ele fugiu e chamou os amigos. Corra!!\r\n Charmander está sendo atacado por diversos Bedrill's. (Você Perdeu 20 pontos).\r\n O que você deseja fazer?\r\n"
 				+ "3 - Seguir caminho para cidade de viridian e desafiar geovanni\r\n"
 				+ "4 - Seguir para cidade de viridian, e não visitar o ginásio", "Floresta de Viridian", -20);
-		Capitulo capitulo2 = new Capitulo("Você e seu charmander tomaram um atalho para cidade de cerulean, encontrando uma nova companheira no caminho, o nome dela é Misty. \r\nChegando na cidade de cerulean, vocês dois juntos batalharam contra as irmãs de misty e venceram, ganhando sua primeira insígnia, a insígnia de cascata. (energia +40).", "Atalho para cerulian", 40);
+		Capitulo capitulo2 = new Capitulo("Você e seu pokemon tomaram um atalho para cidade de cerulean, encontrando uma nova companheira no caminho, o nome dela é Misty. \r\nChegando na cidade de cerulean, vocês dois juntos batalharam contra as irmãs de misty e venceram, ganhando sua primeira insígnia, a insígnia de cascata. (energia +40).", "Atalho para cerulian", 40);
 		
 		
 		// Criação Capitulos 2º Altura 1º Sub Arvore
@@ -205,15 +205,22 @@ public class Main {
 			System.out.println(" 1 - "+ listaPokemon[1]);
 			System.out.println(" 2 - "+ listaPokemon[2]);
 			
+			System.out.print("\nDigite sua escolha: ");
 			int opcaoPokemon=consoleInput.nextInt();
 			
-			//Jogador
-			System.out.println("Informe o nome do Jogador: ");
+			 while(opcaoPokemon >= 3 || opcaoPokemon < 0)
+		        {
+		        	System.out.print("Escolha uma opção válida");
+		        	opcaoPokemon = consoleInput.nextInt();
+		        }
 			
-			String nomeJogador=consoleInput.next();
+			//Jogador
+			System.out.print("\nInforme o nome do Jogador: ");
+			
+			String nomeJogador = consoleInput.next();
 			
 			//JOGADOR 
-			Jogador jogador = new Jogador(100, listaPokemon[opcaoPokemon],nomeJogador);
+			Jogador jogador = new Jogador(100, listaPokemon[opcaoPokemon], nomeJogador);
 			
 			//Criando Jogo
 			Jogo jogo =new Jogo(jogador, raiz);
@@ -230,12 +237,20 @@ public class Main {
 			    //CAMINHOS
 			    if(cap.continuar()){
 			        //EXIBE OS DOIS CAMINHO
-			        System.out.println("CAMINHO 0 - "+cap.getProximosCapitulos().get(0));
-			        System.out.println("CAMINHO 1 - "+cap.getProximosCapitulos().get(1));
-
+			        System.out.println("\nCAMINHO 0 - "+cap.getProximosCapitulos().get(0));
+			        System.out.println("CAMINHO 1 - "+cap.getProximosCapitulos().get(1) + "\n");
+			        
 			        //PEGA A OPÇÃO DO USUÁRIO
 			        System.out.print("Escolha um Caminho: ");
 			        int opcaoCapitulo = consoleInput.nextInt();
+			       
+			        System.out.println();
+			        while(opcaoCapitulo >= 2 || opcaoCapitulo < 0)
+			        {
+			        	System.out.print("Escolha uma opção válida: ");
+			            opcaoCapitulo = consoleInput.nextInt();
+			            System.out.println();
+			        }
 
 			        //AVANÇA AO PRÓXIMO NÍVEL
 			        int retorno = jogo.proximoNivel(opcaoCapitulo);
@@ -250,8 +265,8 @@ public class Main {
 			        	System.out.println("Você chegou o fim.");
 			        	break;
 			        }
-			        
-
+			 
+			   
 			    }else{
 			        System.out.println("VOCÊ CHEGOU AO FINAL DO JOGO");
 			        break;
@@ -271,8 +286,7 @@ public class Main {
 		}
 		
 		
-		
-		
+
 
 	}
 

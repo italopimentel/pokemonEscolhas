@@ -26,7 +26,7 @@ public class PokemonSimples {
 	
 	@Override
 	public String toString() {
-		return "PokemonSimples [nome=" + nome + ", tipo=" + tipo + "]";
+		return nome + ", tipo: " + tipo;
 	}
 	
 	
