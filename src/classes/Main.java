@@ -1,10 +1,14 @@
 package classes;
+<<<<<<< HEAD
 import java.util.Scanner;
+=======
+>>>>>>> 0d8383dc1d381c25136e24f87b0f4877e1fbe9c8
 
 public class Main {
 
 	public static void main(String[] args) {
 		
+<<<<<<< HEAD
 		/*/ Criação do pokemom p/teste
 		PokemonSimples lala = new PokemonSimples("Pikachu", "Eletrico");
 		// Cria Jogador
@@ -22,6 +26,25 @@ public class Main {
 		
 		//
 		Jogo jogo =new Jogo(jogador, raiz);
+=======
+		// TODO Auto-generated method stub
+		PokemonSimples lala = new PokemonSimples("Pikachu", "Eletrico");
+		Jogador jogador = new Jogador(100,lala);
+		
+		
+		Capitulo raiz = new Capitulo("Texto1", "home", 0);
+		Capitulo capitulo1 = new Capitulo("floresta", "floresta", -10);
+		Capitulo capitulo2 = new Capitulo("cerulian", "cerulian", 8);
+		Capitulo capitulo3 = new Capitulo("teste1", "teste1", 10);
+		Capitulo capitulo4 = new Capitulo("teste2", "teste2", -100);
+				
+		raiz.adicionarCapitulo(capitulo1);
+		raiz.adicionarCapitulo(capitulo2);
+		capitulo2.adicionarCapitulo(capitulo3);
+		capitulo2.adicionarCapitulo(capitulo4);
+		
+		Jogo jogo = new Jogo(jogador, raiz);
+>>>>>>> 0d8383dc1d381c25136e24f87b0f4877e1fbe9c8
 		System.out.println(jogo);
 		
 		int resultado = jogo.proximoNivel(1);
@@ -29,6 +52,7 @@ public class Main {
 		System.out.println(jogo);
 		System.out.println(resultado);
 		
+<<<<<<< HEAD
         resultado = jogo.proximoNivel(1);
 		
 		System.out.println(jogo);
@@ -131,6 +155,13 @@ public class Main {
 		
 		
 		
+=======
+		jogo = new Jogo(jogador, capitulo2);
+        resultado = jogo.proximoNivel(0);
+		
+		System.out.println(jogo);
+		System.out.println(resultado);
+>>>>>>> 0d8383dc1d381c25136e24f87b0f4877e1fbe9c8
 
 	}
 
