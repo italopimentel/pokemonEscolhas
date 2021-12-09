@@ -2,11 +2,13 @@ package classes;
 
 public class Jogador {
 	
+	private String nome;
 	private int energia;
 	private PokemonSimples pokemon;
 	
-	public Jogador(int energia, PokemonSimples pokemon) {
-		super();
+	public Jogador(int energia, PokemonSimples pokemon,String nome) 
+	{
+		this.nome = nome;
 		this.energia = energia;
 		this.pokemon = pokemon;
 	}
@@ -30,6 +32,14 @@ public class Jogador {
 	public void modificarEnergia(int energia)
 	{
 		this.energia+=energia;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	@Override

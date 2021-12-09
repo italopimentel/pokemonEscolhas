@@ -70,5 +70,4 @@ public class Pokemon {
 	{
 		pokemon.life -= damageTakenBy(pokemon);
 	}
-
-}
+	}

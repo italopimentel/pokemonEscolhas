@@ -17,6 +17,12 @@ public class Capitulo {
 		this.resumo = resumo;
 		this.energia = energia;
 	}
+	public boolean continuar()
+	{
+		if(proximosCapitulos.size() < 2 )
+			return false;
+		return true;
+	}
 	
 	public String getContexto() {
 		return contexto;
