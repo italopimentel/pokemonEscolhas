@@ -6,7 +6,7 @@ public class Jogador {
 	private int energia;
 	private PokemonSimples pokemon;
 	
-	public Jogador(int energia, PokemonSimples pokemon,String nome) 
+	public Jogador(int energia, PokemonSimples pokemon, String nome) 
 	{
 		this.nome = nome;
 		this.energia = energia;
@@ -23,6 +23,11 @@ public class Jogador {
 
 	public PokemonSimples getPokemon() {
 		return pokemon;
+	}
+	
+	public String getPokemonNome()
+	{
+		return pokemon.getNome();
 	}
 
 	public void setPokemon(PokemonSimples pokemon) {

@@ -14,7 +14,7 @@ public class Jogo {
 	
 	public int proximoNivel(int posicao)
 	{
-			// Quando ta sem energia
+		// Quando ta sem energia
 		if (this.jogador.getEnergia() <= 0 )
 		{
 			return 1;
@@ -28,10 +28,10 @@ public class Jogo {
 			this.capituloAtual=this.capituloAtual.getProximosCapitulos().get(posicao);
 			int	energiaCapitulo = this.capituloAtual.getEnergia();	
 			this.jogador.modificarEnergia(energiaCapitulo);
-			
+
 			return 0;
 		}
-		
+
 	}
 
 	public Jogador getJogador() {
@@ -52,7 +52,7 @@ public class Jogo {
 
 	@Override
 	public String toString() {
-		return "Jogo [jogador=" + jogador + ", capituloAtual=" + capituloAtual + "]";
+		return "\nBem vindo " + jogador.getNome() + " ao inicio do jogo" + ", parabéns por ter escolhido o seu " + jogador.getPokemonNome() + "\n";
 	}
 	
 
