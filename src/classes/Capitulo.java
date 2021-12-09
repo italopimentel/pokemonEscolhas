@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Capitulo {
 	
-	private String contexto;
+	private String contexto;//HistoriaAtual
 	private List<Capitulo> proximosCapitulos= new ArrayList<>();
 	private String resumo;
 	private int energia;

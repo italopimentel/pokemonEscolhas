@@ -5,6 +5,7 @@ public class PokemonSimples {
 	private String nome;	
 	private String tipo;
 	
+
 	public PokemonSimples(String nome, String tipo) {
 		super();
 		this.nome = nome;
